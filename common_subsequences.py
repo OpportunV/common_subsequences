@@ -18,7 +18,7 @@ def cns(seq1, seq2):
         for j in range(1, m):
             table[i, j] = table[i - 1, j - 1] + 1 if seq1[i] == seq2[j] else 0
     
-    tmp = np.flip(peak_local_max(table, exclude_border=False), axis=0)
+    tmp = peak_local_max(table, exclude_border=False)
     for x, y in tmp:
         if (seq_len:=table[x, y]) > 1:
             ss.append((x - seq_len + 1, x + 1, y - seq_len + 1, y + 1))
