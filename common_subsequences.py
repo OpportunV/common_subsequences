@@ -26,14 +26,18 @@ def cns(seq1, seq2):
     return ss
 
 
+def print_all_cns(coords, s1, s2):
+    for x1, x2, y1, y2 in coords:
+        print(f'{s1[x1:x2]}')
+
+
 def main():
     a = 'abragakedabra'
     b = 'ragaabdabra'
     ss = cns(a, b)
-	
-    for x1, x2, y1, y2 in ss:
-        print(f'{a[x1:x2]=}, {b[y1:y2]=}')
-
+    
+    print_all_cns(ss, a, b)
+    
 
 if __name__ == '__main__':
     main()
